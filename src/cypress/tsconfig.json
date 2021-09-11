@@ -1,0 +1,14 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "noEmit": true,
+        "types": [
+            "cypress",
+            "@types/cypress-cucumber-preprocessor"
+        ]
+    },
+    "include": [
+        "../../node_modules/cypress",
+        "./**/*.ts"
+    ]
+}

@@ -11,13 +11,18 @@
     "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
     "prepare": "husky install",
     "lint": "npm run lint:js && npm run lint:style",
-    "test": "jest"
+    "test": "jest",
+    "cypress:open": "npx cypress open",
+    "cypress:run": "npx cypress run -e TAGS='not @smoke'",
+    "cypress:run:smoke": "npx cypress run -e TAGS='@smoke'",
+    "cypress:report": "node ./cypress/cucumber-html-report.js"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint",
     "*.{css,vue}": "stylelint"
   },
   "dependencies": {
+    "@cypress/browserify-preprocessor": "^3.0.1",
     "@nuxtjs/axios": "^5.13.6",
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7"
@@ -32,10 +37,13 @@
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/stylelint-module": "^4.0.0",
     "@testing-library/jest-dom": "^5.14.1",
+    "@types/cypress-cucumber-preprocessor": "^4.0.1",
     "@types/jest": "^27.0.1",
     "@vue/test-utils": "^1.2.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^27.0.5",
+    "cypress": "^8.3.1",
+    "cypress-cucumber-preprocessor": "^4.2.0",
     "eslint": "^7.29.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-nuxt": "^2.0.0",
@@ -44,6 +52,7 @@
     "jest": "^27.0.5",
     "jest-axe": "5.0.1",
     "lint-staged": "^10.5.4",
+    "multiple-cucumber-html-reporter": "^1.18.0",
     "prettier": "^2.3.2",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
