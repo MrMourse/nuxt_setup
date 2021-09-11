@@ -62,5 +62,14 @@
     "ts-jest": "^27.0.3",
     "vue-jest": "^3.0.4",
     "webpack": "^4.46.0"
+  },
+  "cypress-cucumber-preprocessor":{
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson":{
+      "generate": true,
+      "outputFolder": "reports/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
   }
 }
