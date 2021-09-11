@@ -25,11 +25,16 @@
       ]
     },
     "types": [
+      "@types/jest",
       "@nuxt/types",
       "@nuxtjs/axios",
       "@types/node"
     ]
   },
+  "include":[
+    "config/jest/setup.ts",
+    "src"
+  ],
   "exclude": [
     "node_modules",
     ".nuxt",

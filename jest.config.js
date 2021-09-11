@@ -1,9 +1,14 @@
 module.exports = {
+  roots: [
+    "<rootDir>/src"
+  ],
+  setupFilesAfterEnv: ['<rootDir>/config/jest/setup.ts'],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/$1',
-    '^~/(.*)$': '<rootDir>/$1',
-    '^vue$': 'vue/dist/vue.common.js'
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '^~/(.*)$': '<rootDir>/src/$1',
+    '.*\\.(vue)$': 'vue/dist/vue.common.js'
   },
+  moduleDirectories: ["node_modules", "src"],
   moduleFileExtensions: [
     'ts',
     'js',
@@ -11,8 +16,8 @@ module.exports = {
     'json'
   ],
   transform: {
-    "^.+\\.ts$": "ts-jest",
     '^.+\\.js$': 'babel-jest',
+    "^.+\\.tsx?$": "ts-jest",
     '.*\\.(vue)$': 'vue-jest'
   },
   collectCoverage: true,
